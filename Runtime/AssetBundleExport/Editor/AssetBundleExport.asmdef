@@ -1,5 +1,5 @@
 {
-    "name": "NewAssembly",
+    "name": "AssetBundleExport",
     "rootNamespace": "",
     "references": [
         "GUID:9ecf4dd163d1523449603795906ee996"
