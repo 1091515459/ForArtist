@@ -8,11 +8,17 @@
 		"name": "Dawn",
 		"email": "1091515459@qq.com"
 	},
-	"samples": [
-	{
-		"displayName": "ForArtists",
-		"description": "ForArtist tools",
-		"path": "User"
-	}
-]
+	"samples":
+	[
+		{
+			"displayName": "AssetBundleExport",
+			"description": "AssetBundleExport",
+			"path": "User/AssetBundleExport"
+		},
+		{
+			"displayName": "RandomSizeGen",
+			"description": "RandomSizeGen",
+			"path": "User/RandomSizeGen"
+		}
+	]
 }
