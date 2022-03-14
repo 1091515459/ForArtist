@@ -4,6 +4,7 @@
 	"description": "ForArtist tools",
 	"version": "1.0.0",
 	"unity": "2018.1",
+	"src": "Assets/Forartist",
 	"anthor":{
 		"name": "Dawn",
 		"email": "1091515459@qq.com"
