@@ -26,28 +26,26 @@ namespace ABE
             //         }
             //     }
             // }
-            
-            [MenuItem("Assets/打包“线”模型")]
+
             [MenuItem("GameObject/打包“线”模型", priority = -1)]
-            public static void AssetsPointOut()
+            public static void AssetsPointOut(MenuCommand menuCommand)
             {
-                UnityEngine.Object[] gameObjects = Selection.objects;
+                UnityEngine.Transform[] gameObjects = Selection.GetTransforms(SelectionMode.TopLevel);
+                if (menuCommand.context != Selection.objects[0])return;
                 foreach (var obj in gameObjects)
                 {
-                    GameObject Gobj = obj as GameObject;
-                    abeHelper.Out(Gobj.transform, EquipmentType.线);
+                    abeHelper.Out(obj, EquipmentType.线);
                 }
             }
-            
-            [MenuItem("Assets/打包“点”模型")]
+
             [MenuItem("GameObject/打包“点”模型", priority = -1)]
-            public static void AssetsLineOut()
+            public static void AssetsLineOut(MenuCommand menuCommand)
             {
-                UnityEngine.Object[] gameObjects = Selection.objects;
+                UnityEngine.Transform[] gameObjects = Selection.GetTransforms(SelectionMode.TopLevel);
+                if (menuCommand.context != Selection.objects[0])return;
                 foreach (var obj in gameObjects)
                 {
-                    GameObject Gobj = obj as GameObject;
-                    abeHelper.Out( Gobj.transform,EquipmentType.点位);
+                    abeHelper.Out(obj, EquipmentType.点位);
                 }
             }
     }

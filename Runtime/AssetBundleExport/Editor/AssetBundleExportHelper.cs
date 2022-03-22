@@ -28,6 +28,7 @@ namespace ABE
           public void LineOut()
           {
                GameObject objClone = GameObject.Instantiate(obj.gameObject);
+               objClone.name = obj.name;
                var grandFa = objClone.GetComponentsInChildren<LineRenderer>(true);
                if (grandFa.Length <= 0)
                {
@@ -43,7 +44,7 @@ namespace ABE
                }
 
                string path;
-               BuildAssetsBundles(SavePrefab(obj, out path), path);
+               BuildAssetsBundles(SavePrefab(objClone.transform, out path), path);
           }
           public void PointOut()
           {
