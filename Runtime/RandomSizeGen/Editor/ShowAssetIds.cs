@@ -1,3 +1,5 @@
+#if UNITY_EDITOR
+
 using System.Text;
 using UnityEngine;
 using UnityEditor;
@@ -26,3 +28,4 @@ class ShowAssetIds
         Debug.Log(stringBuilder.ToString());
     }
 }
+#endif

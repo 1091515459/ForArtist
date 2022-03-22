@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -24,23 +25,30 @@ namespace ABE
                          break;
                }
           }
-
-          private void LineOut()
+          public void LineOut()
           {
-               var grandFa = obj.GetComponentsInChildren<LineRenderer>(true);
+               GameObject objClone = GameObject.Instantiate(obj.gameObject);
+               var grandFa = objClone.GetComponentsInChildren<LineRenderer>(true);
+               if (grandFa.Length <= 0)
+               {
+                    Debug.Log("<color=#ff0000>"+objClone+" is not a line</color>");
+                    return;
+               }
+               objClone.transform.position = grandFa[0].bounds.center + Vector3.one;
                Vector3[] v3 = new Vector3[2] {new Vector3(0, 0, 0), new Vector3(0, 0, 10)};
                foreach (LineRenderer child in grandFa)
                {
+                    child.positionCount = 2;
                     child.SetPositions(v3);
                }
 
                string path;
                BuildAssetsBundles(SavePrefab(obj, out path), path);
           }
-          
-          private void PointOut()
+          public void PointOut()
           {
-               
+               string path;
+               BuildAssetsBundles(SavePrefab(obj, out path), path);
           }
 
           static Transform SavePrefab(Transform obj, out string path)
@@ -92,3 +100,4 @@ namespace ABE
           }
      }
 }
+#endif
