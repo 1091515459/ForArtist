@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using GD.MinMaxSlider;
-using Unity.VisualScripting;
 using UnityEditor;
 
 namespace RandomSizeGen
