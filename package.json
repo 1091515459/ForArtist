@@ -2,7 +2,7 @@
 	"name": "com.dawn.forartist",
 	"displayName": "ForArtists",
 	"description": "ForArtist tools",
-	"version": "0.0.1",
+	"version": "0.0.3",
 	"unity": "2018.1",
 	"anthor":{
 		"name": "Dawn",
